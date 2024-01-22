@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Color Changer</title>
+  <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('123.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #colorDiv {
+        width: 400px;
+        height: 400px;
+        background-color: blue;
+        border: 1px solid white;
+        margin-top: 20px;
+        border-radius: 10px; 
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+    }
+    #darkModeBtn {
+      background-color: bisque;
+      color: red;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 3px 3px gray;
+      padding: 15px;
+    }
+    #changeColorBtn {
+        background-color: bisque;
+      color: red;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 3px 3px gray;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript colorChanger() Hands-On</h1>
+
+  <button id="changeColorBtn">Click Me</button>
+  <div id="colorDiv"></div>
+
+  <button id="darkModeBtn">Dark Mode</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get references to the button, colorDiv, and darkModeBtn
+      var changeColorBtn = document.getElementById('changeColorBtn');
+      var colorDiv = document.getElementById('colorDiv');
+      var darkModeBtn = document.getElementById('darkModeBtn');
+
+      // Add event listener to the button
+      changeColorBtn.addEventListener('click', function () {
+        // Check the current color of the div
+        if (colorDiv.style.backgroundColor === 'green') {
+          // Change the color to blue
+          colorDiv.style.backgroundColor = 'blue';
+        } else {
+          // Change the color back to green
+          colorDiv.style.backgroundColor = 'green';
+        }
+      });
+
+      // Add event listener to the dark mode button
+      darkModeBtn.addEventListener('click', function () {
+        // Toggle dark mode by changing the background color of the body
+        document.body.style.backgroundColor = document.body.style.backgroundColor === 'gray' ? 'white' : 'gray';
+      });
+    });
+  </script>
+  
+
+</body>
+</html>
